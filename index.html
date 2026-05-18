@@ -17,24 +17,87 @@
 
     <!-- NAVIGASI -->
     <nav class="navbar">
-        <div class="logo"><i class="fas fa-graduation-cap"></i> PORTOFOLIO</div>
+
+        <!-- LOGO -->
+        <div class="logo" onclick="showSection('home', document.querySelector('.nav-menu .nav-link'))">
+
+            <i class="fas fa-graduation-cap"></i> PORTOFOLIO
+
+        </div>
+
         <ul class="nav-menu">
-            <li class="nav-link active" onclick="showSection('home', this)">HOME</li>
-            <li class="nav-link" onclick="openGroup('profil', this)">PROFIL</li>
-            <li class="nav-link" onclick="openGroup('artefak', this)">ARTEFAK</li>
-            <li class="nav-link" onclick="showSection('guru', this)">GURU YANG DITUJU</li>
+
+            <li class="nav-link active" onclick="showSection('home', this)">
+                HOME
+            </li>
+
+            <li class="nav-link" onclick="openGroup('profil', this)">
+                PROFIL
+            </li>
+
+            <li class="nav-link" onclick="openGroup('artefak', this)">
+                ARTEFAK
+            </li>
+
+            <li class="nav-link" onclick="showSection('guru', this)">
+                GURU YANG DITUJU
+            </li>
+
         </ul>
+
     </nav>
 
     <!-- ========================================== -->
     <!-- SECTION HOME -->
     <!-- ========================================== -->
+
     <section id="home" class="section active">
+
         <div class="home-hero">
-            <h1>E-PORTOFOLIO</h1>
-            <h3>PPL Terbimbing & Pengembangan Profesional Guru</h3>
-            <hr style="width: 100px; margin: 20px auto; border: 3px solid #4F46E5;">
+
+            <!-- TOP -->
+            <div class="home-topbar">
+
+                <div class="home-logo-group">
+                    <img src="img/logo-ums.webp" alt="logo ums">
+                    <img src="img/logo-ppg-ums.webp" alt="logo ppg ums">
+                </div>
+
+                <!-- BUTTON START -->
+                <a href="javascript:void(0)" class="home-start-btn"
+                    onclick="openGroup('profil', document.querySelectorAll('.nav-link')[1])">
+
+                    START
+
+                </a>
+
+            </div>
+
+            <!-- CONTENT -->
+            <div class="home-content">
+
+                <div class="home-welcome">Welcome to</div>
+
+                <h1 class="home-title">PORTOFOLIO</h1>
+
+                <h3 class="home-subtitle">
+                    MAHASISWA PPG PRAJABATAN 2026
+                </h3>
+
+                <div class="home-author">
+                    Mohamad Saiful Anwar, S.Kom.
+                </div>
+
+            </div>
+
+            <!-- FOTO -->
+            <img src="img/saiful.png" alt="foto saiful" class="home-person">
+
+            <!-- ORNAMEN -->
+            <div class="home-wave"></div>
+
         </div>
+
     </section>
 
     <!-- ========================================== -->
@@ -42,25 +105,28 @@
     <!-- ========================================== -->
     <section id="profil" class="section">
         <h2>Profil Mahasiswa</h2>
-        <div class="profil-container">
+        <div class="section-container">
             <!-- Foto Profil Placeholder -->
-            <div class="profil-img-wrapper">
+            <div class="">
                 <!-- Ganti src dengan foto asli Anda -->
                 <img src="img/saiful.png" alt="Foto Profil" class="profil-img">
             </div>
 
             <div class="info-profile">
                 <div class="info-item">
-                    <span>Nama:</span> [Nama Lengkap Mahasiswa]
+                    <span>Nama:</span> Mohamad Saiful Anwar, S.Kom.
+                </div>
+                <div class="info-item">
+                    <span>NIM:</span> A971260023
+                </div>
+                <div class="info-item">
+                    <span>LPTK:</span> Universitas Muhammadiyah Surakarta
+                </div>
+                <div class="info-item">
+                    <span>PPLT:</span> SMP Muhammadiyah Program Khusus Kottabarat Surakarta
                 </div>
                 <div class="info-item">
                     <span>Tagline:</span> "Mengenal peserta didik dengan hati, mengajar dengan inovasi."
-                </div>
-                <div class="info-item">
-                    <span>Kampus (LPTK):</span> [Nama Universitas / Institut Keguruan]
-                </div>
-                <div class="info-item">
-                    <span>Sekolah (PPL):</span> [Nama SMA/SMK Tempat PPL]
                 </div>
             </div>
         </div>
@@ -71,156 +137,162 @@
     <!-- ========================================== -->
     <section id="artefak" class="section">
         <h2>Artefak Pembelajaran</h2>
+        <div class="section-container">
+            <!-- Sub Menu Artefak -->
+            <div class="artefak-tabs">
+                <button class="tab-btn artefak-active" onclick="openArtefak('modul', this)">MODUL AJAR</button>
+                <button class="tab-btn" onclick="openArtefak('penilaian', this)">PENILAIAN</button>
+                <button class="tab-btn" onclick="openArtefak('lampiran', this)">LAMPIRAN</button>
+                <button class="tab-btn" onclick="openArtefak('dokumentasi', this)">DOKUMENTASI</button>
+            </div>
 
-        <!-- Sub Menu Artefak -->
-        <div class="artefak-tabs">
-            <button class="tab-btn artefak-active" onclick="openArtefak('modul', this)">MODUL AJAR</button>
-            <button class="tab-btn" onclick="openArtefak('penilaian', this)">PENILAIAN</button>
-            <button class="tab-btn" onclick="openArtefak('lampiran', this)">LAMPIRAN</button>
-            <button class="tab-btn" onclick="openArtefak('dokumentasi', this)">DOKUMENTASI</button>
-        </div>
+            <!-- KONTEN MODUL AJAR -->
+            <div id="modul" class="artefak-content show-content">
+                <div class="card-grid">
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <div class="card-header" style="background-color: #EA4335;"><i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">RPM SIKLUS 1</div>
+                            <p></p>
+                            <!-- Link Google Drive -->
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive"><i
+                                    class="fas fa-file-pdf"></i> Unduh File</a>
+                            <button class="btn-detail" onclick="openModal('modal-modul-1')">Lihat Detail</button>
+                        </div>
+                    </div>
 
-        <!-- KONTEN MODUL AJAR -->
-        <div id="modul" class="artefak-content show-content">
-            <div class="card-grid">
-                <!-- Card 1 -->
-                <div class="card">
-                    <div class="card-header"><i class="fas fa-book-open"></i></div>
-                    <div class="card-body">
-                        <div class="card-title">RPM SIKLUS 1</div>
-                        <p></p>
-                        <!-- Link Google Drive -->
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive"><i
-                                class="fas fa-file-pdf"></i> Unduh File</a>
-                        <button class="btn-detail" onclick="openModal('modal-modul-1')">Lihat Detail</button>
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <div class="card-header" style="background-color: #FBBC05;"><i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">RPM SIKLUS 2</div>
+                            <p></p>
+                            <!-- Link Google Drive -->
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive"><i
+                                    class="fas fa-file-pdf"></i> Unduh File</a>
+                            <button class="btn-detail" onclick="openModal('modal-modul-2')">Lihat Detail</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <div class="card-header" style="background-color: #34A853;"><i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">RPM SIKLUS 3</div>
+                            <p></p>
+                            <!-- Link Google Drive -->
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive"><i
+                                    class="fas fa-file-pdf"></i> Unduh File</a>
+                            <button class="btn-detail" onclick="openModal('modal-modul-3')">Lihat Detail</button>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Card 2 -->
-                <div class="card">
-                    <div class="card-header" style="background-color: #FBBC05;"><i class="fas fa-book-open"></i></div>
-                    <div class="card-body">
-                        <div class="card-title">RPM SIKLUS 2</div>
-                        <p></p>
-                        <!-- Link Google Drive -->
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive"><i
-                                class="fas fa-file-pdf"></i> Unduh File</a>
-                        <button class="btn-detail" onclick="openModal('modal-modul-2')">Lihat Detail</button>
+            <!-- KONTEN PENILAIAN -->
+            <div id="penilaian" class="artefak-content">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #EA4335;"><i
+                                class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">PENILAIAN SIKLUS 1</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="background-color: #FBBC05;"><i
+                                class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">PENILAIAN SIKLUS 2</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="background-color: #34A853;"><i
+                                class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">PENILAIAN SIKLUS 3</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Card 3 -->
-                <div class="card">
-                    <div class="card-header" style="background-color: #34A853;"><i class="fas fa-book-open"></i></div>
-                    <div class="card-body">
-                        <div class="card-title">RPM SIKLUS 3</div>
-                        <p></p>
-                        <!-- Link Google Drive -->
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive"><i
-                                class="fas fa-file-pdf"></i> Unduh File</a>
-                        <button class="btn-detail" onclick="openModal('modal-modul-3')">Lihat Detail</button>
+            <!-- KONTEN LAMPIRAN & DOKUMENTASI (Sama struktur card nya, saya skip agar tidak terlalu panjang) -->
+            <div id="lampiran" class="artefak-content">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #EA4335;"><i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">LKPD SIKLUS 1</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="background-color: #FBBC05;"><i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">LKPD SIKLUS 2</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="background-color: #34A853;"><i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">LKPD SIKLUS 3</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dokumentasi" class="artefak-content">
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header" style="background-color: #EA4335;"><i class="fas fa-camera"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">DOKUMENTASI SIKLUS 1</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="background-color: #FBBC05;"><i class="fas fa-camera"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">DOKUMENTASI SIKLUS 2</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="background-color: #34A853;"><i class="fas fa-camera"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">DOKUMENTASI SIKLUS 3</div>
+                            <p></p>
+                            <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- KONTEN PENILAIAN -->
-        <div id="penilaian" class="artefak-content">
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-header" style="background-color: #EA4335;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">PENILAIAN SIKLUS 1</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #FBBC05;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">PENILAIAN SIKLUS 2</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #34A853;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">PENILAIAN SIKLUS 3</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- KONTEN LAMPIRAN & DOKUMENTASI (Sama struktur card nya, saya skip agar tidak terlalu panjang) -->
-        <div id="lampiran" class="artefak-content">
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-header" style="background-color: #EA4335;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">LKPD SIKLUS 1</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #FBBC05;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">LKPD SIKLUS 2</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #34A853;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">LKPD SIKLUS 3</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="dokumentasi" class="artefak-content">
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-header" style="background-color: #EA4335;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">DOKUMENTASI SIKLUS 1</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #FBBC05;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">DOKUMENTASI SIKLUS 2</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #34A853;"><i class="fas fa-clipboard-check"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">DOKUMENTASI SIKLUS 3</div>
-                        <p></p>
-                        <a href="https://drive.google.com" target="_blank" class="btn-gdrive">Buka</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </section>
 
     <!-- ========================================== -->
@@ -228,48 +300,54 @@
     <!-- ========================================== -->
     <section id="guru" class="section">
         <h2>Guru Yang Dituju</h2>
+        <div class="section-container">
+            <!-- Narasi Profil -->
+            <div class="narasi-box">
+                <h3>Profil & Latar Belakang</h3>
+                <p>
+                    Perkenalkan saya <b>[Nama Anda]</b>, berasal dari [Kota/Kabupaten Daerah]. Keunikan daerah saya
+                    adalah
+                    [contoh: tradisi budaya yang kental]. Dari sanalah saya belajar tentang keragaman dan gotong royong.
+                </p>
+                <br>
+                <p>
+                    <b>Inspirasi & Tujuan:</b> Saya termotivasi menjadi guru setelah melihat bagaimana sosok guru di
+                    sekolah
+                    mampu mengubah pandangan anak-anak tentang masa depan. Saya yakin bahwa education adalah kunci
+                    kemajuan.
+                    Dengan menjadi guru profissional, saya ingin berkontribusi pada peningkatan kualitas pendidikan
+                    nasional.
+                </p>
+                <br>
+                <blockquote
+                    style="border-left: 4px solid #4F46E5; padding-left: 15px; font-style: italic; color: #555;">
+                    "Pendidikan adalah senjata paling mematikan di dunia, karena dengan pendidikan, kita bisa mengubah
+                    dunia." - Nelson Mandela
+                </blockquote>
+            </div>
 
-        <!-- Narasi Profil -->
-        <div class="narasi-box">
-            <h3>Profil & Latar Belakang</h3>
-            <p>
-                Perkenalkan saya <b>[Nama Anda]</b>, berasal dari [Kota/Kabupaten Daerah]. Keunikan daerah saya adalah
-                [contoh: tradisi budaya yang kental]. Dari sanalah saya belajar tentang keragaman dan gotong royong.
-            </p>
-            <br>
-            <p>
-                <b>Inspirasi & Tujuan:</b> Saya termotivasi menjadi guru setelah melihat bagaimana sosok guru di sekolah
-                mampu mengubah pandangan anak-anak tentang masa depan. Saya yakin bahwa education adalah kunci kemajuan.
-                Dengan menjadi guru profissional, saya ingin berkontribusi pada peningkatan kualitas pendidikan
-                nasional.
-            </p>
-            <br>
-            <blockquote style="border-left: 4px solid #4F46E5; padding-left: 15px; font-style: italic; color: #555;">
-                "Pendidikan adalah senjata paling mematikan di dunia, karena dengan pendidikan, kita bisa mengubah
-                dunia." - Nelson Mandela
-            </blockquote>
-        </div>
+            <!-- Misi & Kompetensi -->
+            <div class="analisis-item">
+                <h3>Misi & Kompetensi Guru Profesional</h3>
+                <p>Saya merancang profesi guru yang ingin saya bangun dengan kompetensi以下几点:</p>
+                <ul style="margin-top: 10px; padding-left: 20px; list-style: disc;">
+                    <li><b>Pedagogik:</b> Menguasai materi pembelajaran dan desain evaluasi yang menyenangkan.</li>
+                    <li><b>Kepribadian:</b> Berkarakter jujur, empati, dan menjadi teladan bagi peserta didik.</li>
+                    <li><b>Profesional:</b> Selalu belajar dan berinovasi mengikuti perkembangan zaman (Digital
+                        Learning).
+                    </li>
+                </ul>
+            </div>
 
-        <!-- Misi & Kompetensi -->
-        <div class="analisis-item">
-            <h3>Misi & Kompetensi Guru Profesional</h3>
-            <p>Saya merancang profesi guru yang ingin saya bangun dengan kompetensi以下几点:</p>
-            <ul style="margin-top: 10px; padding-left: 20px; list-style: disc;">
-                <li><b>Pedagogik:</b> Menguasai materi pembelajaran dan desain evaluasi yang menyenangkan.</li>
-                <li><b>Kepribadian:</b> Berkarakter jujur, empati, dan menjadi teladan bagi peserta didik.</li>
-                <li><b>Profesional:</b> Selalu belajar dan berinovasi mengikuti perkembangan zaman (Digital Learning).
-                </li>
-            </ul>
-        </div>
-
-        <div class="analisis-item">
-            <h3>Karya & Produk Pembelajaran</h3>
-            <p>Berikut adalah artefak produk rencana dan perangkat pembelajaran yang saya buat selama PPL:</p>
-            <ul class="attachment-list" style="margin-top: 15px;">
-                <li><a href="#"><i class="fas fa-file-pdf"></i> RPP Siklus 1, 2, dan 3</a></li>
-                <li><a href="#"><i class="fas fa-file-video"></i> Video Dokumentasi Praktik Mengajar</a></li>
-                <li><a href="#"><i class="fas fa-chart-bar"></i> Hasil Penilaian dari Guru Pamong & DPL</a></li>
-            </ul>
+            <div class="analisis-item">
+                <h3>Karya & Produk Pembelajaran</h3>
+                <p>Berikut adalah artefak produk rencana dan perangkat pembelajaran yang saya buat selama PPL:</p>
+                <ul class="attachment-list" style="margin-top: 15px;">
+                    <li><a href="#"><i class="fas fa-file-pdf"></i> RPP Siklus 1, 2, dan 3</a></li>
+                    <li><a href="#"><i class="fas fa-file-video"></i> Video Dokumentasi Praktik Mengajar</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Hasil Penilaian dari Guru Pamong & DPL</a></li>
+                </ul>
+            </div>
         </div>
     </section>
 
