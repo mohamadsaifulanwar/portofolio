@@ -36,48 +36,119 @@ ul {
     list-style: none;
 }
 
-/* --- NAVIGATION --- */
+/* ========================================= */
+/* NAVBAR (RAPI + TIDAK MEPET) */
+/* ========================================= */
+
 .navbar {
-    background: var(--card-bg);
-    padding: 1rem 5%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+
+    padding: 18px 40px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
+/* LOGO */
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 1.4rem;
+    font-weight: 800;
     color: var(--primary-color);
-    letter-spacing: -0.5px;
+
     cursor: pointer;
+    flex-shrink: 0;
 }
 
+/* MENU */
 .nav-menu {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 14px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    padding: 10px 16px;
+    border-radius: 12px;
+
     color: var(--text-dark);
-    transition: 0.3s;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 8px;
+
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
     color: white;
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.18);
 }
 
+/* ========================================= */
+/* RESPONSIVE (TETAP RAPI, TIDAK MEPET) */
+/* ========================================= */
+
+@media(max-width:768px) {
+
+    .navbar {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-link {
+        padding: 10px 14px;
+        font-size: 0.88rem;
+    }
+}
+
+@media(max-width:480px) {
+
+    .navbar {
+        padding: 14px 16px;
+    }
+
+    .nav-menu {
+        gap: 8px;
+    }
+
+    .nav-link {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+}
 
 /* ========================================= */
 /* GLOBAL SECTION */
