@@ -853,7 +853,7 @@ h2 {
 
 .profil-img {
     object-fit: cover;
-    height: 320px;
+    height: 100%;
 }
 
 /* ==========================================
@@ -1276,6 +1276,7 @@ h2 {
 
 .narasi-box blockquote {
     margin-top: 28px;
+    margin-bottom: 35px;
     background: #EEF2FF;
     padding: 22px 25px;
     border-left: 5px solid #4F46E5;
