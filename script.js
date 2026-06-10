@@ -3,7 +3,7 @@
  * Mengatur navigasi tab, sub-menu, dan modal
  */
 
-// 1. Fungsi Utama Navigasi Menu Utama (Home, Profil, Artefak, Guru)
+// 1. Fungsi Utama Navigasi Menu Utama (Home, Profil, Artefak, Analisis, Guru, Filosofi)
 function showSection(sectionId, element) {
     // Hapus kelas 'active' dari semua menu
     const sections = document.querySelectorAll('.section');
@@ -19,7 +19,7 @@ function showSection(sectionId, element) {
 
     // Tampilkan section yang dipilih
     document.getElementById(sectionId).classList.add('active');
-    
+
     // Tambahkan kelas 'active' pada tombol yang diklik
     element.classList.add('active');
 }
@@ -45,7 +45,7 @@ function openArtefak(artefakId, element) {
 
     // Tampilkan konten yang dipilih
     document.getElementById(artefakId).classList.add('show-content');
-    
+
     // Tambahkan kelas aktif pada tombol
     element.classList.add('artefak-active');
 }
@@ -62,7 +62,7 @@ function closeModal(modalId) {
 }
 
 // Tutup modal jika mengklik area di luar konten modal
-window.onclick = function(event) {
+window.onclick = function (event) {
     const modals = document.querySelectorAll('.modal');
     modals.forEach(modal => {
         if (event.target === modal) {
@@ -73,7 +73,7 @@ window.onclick = function(event) {
 
 // 4. Fungsi Smooth Scroll (Opsional - Membuat scroll lebih halus saat klik menu)
 document.querySelectorAll('.nav-link').forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
         // Jika di mobile (jika navbar punya hamburger), tutup menu
         // (Logika tambahan bisa ditambahkan di sini)
     });
